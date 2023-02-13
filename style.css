@@ -1,0 +1,380 @@
+:root {
+  --main-color: hsl(0, 0%, 20%);
+
+  --color-gray: hsla(0, 0%, 0%, 0.57);
+  --color-dark-black: hsla(0, 0%, 9%);
+
+  --bg-gray: hsl(0, 0%, 89%);
+  --bg-dark-gray:hsla(0, 0%, 0%, 0.04);
+  --bg-gradient: linear-gradient(99.99deg, #4693ED -26.21%,
+   #79C2D2 22.16%, rgba(192, 86, 9, 0.49) 111.62%);
+
+  --main-font: 'Satoshi', sans-serif;
+  --secondary-font: 'Clash Display', sans-serif;
+
+  --sub-heading-font: var(--secondary-font);
+  
+  --fs-body: clamp(1rem, 1.2vw + .5rem, 1.375rem);
+  --fs-primary-heading: 2rem;
+  --fs-nav: 1.5rem;
+}
+
+@media (min-width: 60em) {
+  :root {
+    --sub-heading-font: 'STIX Two Text', serif;
+
+    --fs-primary-heading: 5rem;
+  }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding*/
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  --max-width: 69.375rem;
+  --padding: 2rem;
+
+  width: min(var(--max-width), 100% - var(--padding));
+  margin-inline: auto;
+}
+
+.even-columns {
+  display: grid;
+  gap: 1.75rem;
+}
+
+hr {
+  border: none;
+  height: 0.5px;
+  background-color: var(--main-color);
+}
+
+@media(min-width: 60em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: auto;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+ 
+body {
+  font-family: var(--main-font);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  color: var(--main-color);
+}
+
+.hero h1 {
+  font-family: var(--secondary-font);
+  font-size: var(--fs-primary-heading);
+  font-weight: 600;
+  text-align: center;
+  margin-block-end: 3.125rem;
+}
+
+.hero p {
+  font-size: 1.75rem;
+  font-weight: 500;
+  text-align: center;
+  margin-block-end:  6rem;
+}
+
+.carousel-slider {
+  gap: 1rem;
+  margin-block-end: 6rem;
+  overflow: hidden;
+}
+
+.featured-products {
+  margin-block-end: 11.25rem;
+}
+
+.featured-products h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-block-end: 1.75rem;
+}
+
+.product-container {
+  padding-block: 3.25rem; 
+}
+
+.split-columns,
+.reverse-split-columns {
+  display: grid;
+  gap: 1.75rem;
+}
+
+@media (min-width: 60em) {
+  .split-columns {
+    grid-template-columns: 51% 1fr;
+  }
+
+  .reverse-split-columns {
+    grid-template-columns: 1fr 51%;
+  }
+}
+
+.product-info {
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+ 
+.product-info h3 {
+  font-family: var(--sub-heading-font);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.product-info p {
+  line-height: 1.35;
+}
+
+.major-creators-container {
+  align-items: center;
+}
+
+.major-creators-row {
+  margin-inline-end: 1rem;
+}
+
+.creator-picture-container {
+  display: inline-block;
+  width: 3.1875rem;
+  aspect-ratio: 1;
+  border: 1px solid hsl(191, 24%, 57%);
+  border-radius: 1.625rem;
+}
+
+.major-creators-row :nth-child(2) {
+  margin-inline-start: -1.625rem;
+}
+.major-creators-row :nth-child(3) {
+  margin-inline-start: -1.625rem;
+}
+.major-creators-row :nth-child(4) {
+  margin-inline-start: -1.625rem;
+}
+.major-creators-row :nth-child(5) {
+  margin-inline-start: -1.625rem;
+}
+
+.major-creators-count {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-inline-end: 1rem;
+}
+
+.creators-row-button {
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  aspect-ratio: 1;
+  border-radius: 2.25rem;
+  border: 0.5px solid var(--main-color);
+}
+
+.auction-exhibition {
+  background: var(--bg-gradient);
+  color: white;
+  padding-block: 1rem;
+  margin-block-end: 11.25rem;
+}
+
+.auction-exhibition h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.35;
+  text-decoration: underline 0.8px;
+  text-underline-offset: 1.0625rem;
+  margin-block-end: 30px;
+}
+
+.auction-exhibition-container {
+  background-image: url("images/auctions-exhibitions.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-block: 25% 4%;
+  padding-inline: 3%;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+@media (max-width: 60em) {
+  .auction-exhibition-container {
+    flex-direction: column;
+  }
+}
+
+.auction-exhibition-info  {
+  flex-basis: 66%;
+  align-items: center;
+  gap: 1rem;
+}
+
+.auction-exhibition-info h3 {
+  font-family: 'Bellefair', serif;
+  font-size: 4.2256rem;
+  line-height: 1.15;
+}
+
+.auction-exhibition-title {
+  font-family: 'Bellefair', serif;
+  font-size: 1.8125rem;
+  line-height: 1.14;
+  width: 22.125rem;
+  margin-block-end: 1rem;
+}
+
+.auction-exbition-date {
+  font-family: 'Poppins', sans-serif;
+  font-size: .875rem;
+  margin-block-end: 1rem;
+}
+
+.auction-exhibition-content {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.31;
+  letter-spacing: 0.065em;
+}
+
+.auction-exhibition-buttons {
+  align-items: center;
+  gap: 1.8125rem;
+}
+
+.more-info-link {
+  color: white;
+}
+
+.reminder-button {
+  display: inline-block;
+  padding: .5em .7em;
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.auction-exhibition-description {
+  position: relative;
+}
+
+.rounded-white {
+  position: absolute;
+
+  width: 1rem;
+  aspect-ratio: 1;
+  border-radius: .5rem;
+  background-color: white;
+  left: -22px;
+  top: 6px;
+}
+
+.slider-container {
+  align-items: center;
+  justify-content: space-between;
+  margin-block-start: 16px;
+}
+
+.slide-level-container {
+  height: .625rem;
+  width: 18.5rem;
+  border-radius: 3.125rem;
+  background-color: hsla(0, 0%, 68%);
+}
+
+.slide-level {
+  height: .625rem;
+  width: 3rem;
+  border-radius: 3.125rem;
+  background-color: white;
+}
+
+.pagination-container {
+  gap: 1rem;
+}
+
+.pagination-container button {
+  height: 4.375rem;
+  aspect-ratio: 1;
+  border: 1px solid;
+  border-radius: 2.1875rem;
+  border-image-source: linear-gradient(180deg, hsl(0, 0%, 68%) 0%,
+   hsl(0, 0%, 13%) 100%);
+  box-shadow: 7px 7px 11px 0px hsla(0, 0%, 0%, 0.15);
+  backdrop-filter: blur(7px);
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
